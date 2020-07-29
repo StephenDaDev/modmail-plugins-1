@@ -449,8 +449,6 @@ class moderation(commands.Cog):
     @checks.has_permissions(PermissionLevel.OWNER)
     async def nuke(self, ctx):
         await ctx.send('Serously? This incident will be reported to the appopriate authorities.')
-        botowner = client.get_user(231595246213922828)
-        await botowner.send(':warning: **YOU ARE GETTING THIS DM BECAUSE**' message.author '**attempted to use the NUKE command in your server.**')
         
 def setup(bot):
     bot.add_cog(moderation(bot))
