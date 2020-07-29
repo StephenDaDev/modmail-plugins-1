@@ -4,7 +4,9 @@ from core import checks
 from core.models import PermissionLevel
 
 class moderation(commands.Cog):
-
+    """
+    Backup Moderation Features. These features are only available to those holding a Modmail Administrator level certification. Please use the main moderation bot for any punishments.
+    """
     def __init__(self, bot):
         self.bot = bot
         self.errorcolor = 0xFF2B2B
@@ -72,7 +74,7 @@ class moderation(commands.Cog):
 
     #Kick command
     @commands.command()
-    @checks.has_permissions(PermissionLevel.MODERATOR)
+    @checks.has_permissions(PermissionLevel.ADMINISTRATOR)
     async def kick(self, ctx, member : discord.Member = None, *, reason = None):
         if member == None:
             embed = discord.Embed(
@@ -251,7 +253,7 @@ class moderation(commands.Cog):
 
     #Mute command
     @commands.command()
-    @checks.has_permissions(PermissionLevel.MODERATOR)
+    @checks.has_permissions(PermissionLevel.ADMINISTRATOR)
     async def mute(self, ctx, member : discord.Member = None, *, reason = None):
         if member == None:
             embed = discord.Embed(
@@ -328,7 +330,7 @@ class moderation(commands.Cog):
 
     #Unmute command
     @commands.command()
-    @checks.has_permissions(PermissionLevel.MODERATOR)
+    @checks.has_permissions(PermissionLevel.ADMINISTRATOR)
     async def unmute(self, ctx, member : discord.Member = None):
         if member == None:
             embed = discord.Embed(
