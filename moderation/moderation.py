@@ -77,6 +77,7 @@ class moderation(commands.Cog):
     @commands.command()
     @checks.has_permissions(PermissionLevel.ADMINISTRATOR)
     async def kick(self, ctx, member : discord.Member = None, *, reason = None):
+        """This command will kick the spcified user."""
         if member == None:
             embed = discord.Embed(
                 title = "Kick Error",
@@ -144,6 +145,7 @@ class moderation(commands.Cog):
     @commands.command()
     @checks.has_permissions(PermissionLevel.ADMINISTRATOR)
     async def ban(self, ctx, member : discord.Member = None, *, reason = None):
+        """This command will ban the specified user."""
         if member == None:
             embed = discord.Embed(
                 title = "Ban Error",
@@ -210,6 +212,7 @@ class moderation(commands.Cog):
     @commands.command()
     @checks.has_permissions(PermissionLevel.ADMINISTRATOR)
     async def unban(self, ctx, *, member : discord.User = None):
+        """This command will unban the specified user."""
         if member == None:
             embed = discord.Embed(
                 title = "Unban Error",
@@ -256,6 +259,7 @@ class moderation(commands.Cog):
     @commands.command()
     @checks.has_permissions(PermissionLevel.ADMINISTRATOR)
     async def mute(self, ctx, member : discord.Member = None, *, reason = None):
+        """This command will mute the specified user."""
         if member == None:
             embed = discord.Embed(
                 title = "Mute Error",
@@ -333,6 +337,7 @@ class moderation(commands.Cog):
     @commands.command()
     @checks.has_permissions(PermissionLevel.ADMINISTRATOR)
     async def unmute(self, ctx, member : discord.Member = None):
+        """This command will unmute the spcified user."""
         if member == None:
             embed = discord.Embed(
                 title = "Unmute Error",
@@ -382,6 +387,7 @@ class moderation(commands.Cog):
     @commands.command(aliases = ["lightban"])
     @checks.has_permissions(PermissionLevel.ADMINISTRATOR)
     async def softban(self, ctx, member : discord.Member = None, *, reason = None):
+        """This command will ban and instantly unban the specified user in an effort to delete all their recent messages."""
         if member == None:
             embed = discord.Embed(
                 title = "Softban Error",
@@ -451,6 +457,7 @@ class moderation(commands.Cog):
     @commands.command()
     @checks.has_permissions(PermissionLevel.OWNER)
     async def nuke(self, ctx):
+        """This command is offlimits 100% of the time and will be reported to the Bot Owner and Server Owner."""
         await ctx.send('Serously? This incident will be reported to the appopriate authorities.')
         
 def setup(bot):
